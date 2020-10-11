@@ -7,17 +7,22 @@ const cors = require("cors");
 const app = express();
 const secret = require("./secret");
 
-var mysql = require('mysql')
-var connection = mysql.createConnection({
+const mysql = require('mysql')
+const connection = mysql.createConnection({
   host: secret.HOST,
   user: secret.USER,
   password: secret.PASSWORD,
-  database: secret.DB
+  database: secret.DB,
 })
 
-connection.connect()
+connection.connect();
+connection.on('error', (error) => {
+	console.log('error: ', error);
+});
 
-connection.end()
+connection.on('connect', () => {
+	console.log('connected to db');
+});
 
 
 /**
