@@ -2,138 +2,123 @@
 
 const express = require("express");
 const bodyParser = require("body-parser");
-const cors = require("cors");
-
-const app = express();
 const secret = require("./secret");
+const setupDB = require('./db')
 
-const mysql = require('mysql')
-const connection = mysql.createConnection({
-  host: secret.HOST,
-  user: secret.USER,
-  password: secret.PASSWORD,
-  database: secret.DB,
-})
+const main = async () => {
+	const app = express()
+	const port = 3000
 
-connection.connect();
-connection.on('error', (error) => {
-	console.log('error: ', error);
-});
+	const dbConfig = {
+		database: secret.DB,
+		host: secret.HOST,
+		password: secret.PASSWORD,
+		user: secret.USER
+	}
+	const { User, Workout } = await setupDB(dbConfig);
 
-connection.on('connect', () => {
-	console.log('connected to db');
-});
+	// parse requests of content-type - application/json
+	app.use(bodyParser.json());
+	// parse requests of content-type - application/x-www-form-urlencoded
+	app.use(bodyParser.urlencoded({ extended: true }));
 
+	// api routes
+    app.get('/', (req, res) => {
+        res.send('Hello World!')
+	})
+	
+	// CREATE a user
+    app.post('/api/users', async (req, res) => {
+        const {name} = req.body
+        const newUser = await User.create({name})
+        res.status(201).send(`New ID is: ${newUser.id}`)
+	})
+	
+	// GET users
+    app.get('/api/users', async (req, res) => {
+        const allUsers = await User.findAll()
+        res.status(200).send(JSON.stringify(allUsers, null, 2))
+    })
 
-/**
-var corsOptions = {
-  origin: "http://localhost:3000"
+	// GET a single user
+	app.get('/api/users/:id', async (req, res) => {
+		const user = users.find(c => c.id === parseInt(req.params.id))
+		if (!user) return res.status(404).send('The user with the given ID was not found.');
+		res.status(200).send(user);
+	});
+
+	// DELETE user
+	app.delete('/api/users/:id', async (req, res) => {
+		// look up user
+		const user = users.find(c => c.id === parseInt(req.params.id))
+		if (!user) return res.status(404).send('The user with the given ID was not found.');
+
+		// delete user
+		const index = users.indexOf(user);
+		users.splice(index, 1);
+
+		res.status(204).send();
+	});
+
+	// CREATE a workout
+	app.post('/api/workouts', async (req, res) => {
+        const {userId, exercise, category, weight, unit, schema, notes} = req.body
+        const newWorkout = {
+            userId,
+            exercise,
+            category
+        }
+        if (weight) newWorkout.weight = weight;
+		if (unit) newWorkout.unit = unit;
+		if (schema) newWorkout.schema = schema;
+		if (notes) newWorkout.notes = notes;
+        let dbWorkout
+        try {
+            dbWorkout = await Workout.create(newWorkout);
+        } catch (err) {
+           console.error("error creating user: ", err);
+           res.status(500).send();
+        }
+        // sending back the id which the database created for us on creation
+        res.status(201).send(`New ID is: ${dbWorkout.id}`);
+    });
+
+	// GET workouts
+	app.get('/api/workouts', async (req, res) => {
+        const allWorkouts = await Workout.findAll();
+        res.status(200).send(JSON.stringify(allWorkouts, null, 2));
+    });
+
+	// GET a single workout
+	app.get('/api/workouts/:id', async (req, res) => {
+		const workout = workouts.find(c => c.id === parseInt(req.params.id));
+		if (!workout) return res.status(404).send('The workout with the given ID was not found.');
+		res.status(200).send(workout);
+	});
+
+	// DELETE workout
+	app.delete('/api/workouts/:id', async (req, res) => {
+		// look up workout
+		const workout = workouts.find(c => c.id === parseInt(req.params.id));
+		if (!workout) return res.status(404).send('The workout with the given ID was not found.');
+
+		// delete
+		const index = workouts.indexOf(workout);
+		workouts.splice(index, 1);
+
+		res.status(204).send();
+	});
+
+	// set port, listen for requests
+	const PORT = process.env.PORT || 3000;
+	const server = app.listen(PORT, () => {
+		console.log(`Server is running on port ${PORT}.`);
+	});
+
+	server.on('close', () => {
+		console.log('Goodbye...');
+		connection.end();
+	});
+
 };
-app.use(cors(corsOptions));
-*/
-
-// parse requests of content-type - application/json
-app.use(bodyParser.json());
-
-// parse requests of content-type - application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: true }));
-
-// simple route
-app.get("/", (req, res) => {
-  res.json({ message: "Welcome to FitApp" });
-});
-
-// GET users
-app.get('/api/users', (req, res) => {
-	res.status(200).send(users);
-});
-
-// GET a single user
-app.get('/api/users/:id', (req, res) => {
-	const user = users.find(c => c.id === parseInt(req.params.id))
-	if (!user) return res.status(404).send('The user with the given ID was not found.');
-	res.status(200).send(user);
-});
-
-// CREATE a user
-app.post('/api/user', (req, res) => {
-	const { error } = validateWorkout(req.body);
-	if (error) return res.status(400).send(error.message);
-
-	const user = {
-		// this will change when we add the database
-		id: users.length + 1,
-		name: req.body.name
-	};
-	users.push(user);
-	res.status(201).send(user);
-});
-
-// DELETE user
-app.delete('/api/users/:id', (req, res) => {
-	// look up user
-	const user = users.find(c => c.id === parseInt(req.params.id))
-	if (!user) return res.status(404).send('The user with the given ID was not found.');
-	
-	// delete user
-	const index = users.indexOf(user);
-	users.splice(index, 1);
-
-	res.status(204).send();
-});
-
-const workouts = [
-	{ id: 1, name: 'workout1' },
-	{ id: 2, name: 'workout2' },
-	{ id: 3, name: 'workout3' },
-];
-
-// GET workouts
-app.get('/api/workouts', (req, res) => {
-	res.status(200).send(workouts);
-});
-
-// GET a single workout
-app.get('/api/workouts/:id', (req, res) => {
-	const workout = workouts.find(c => c.id === parseInt(req.params.id))
-	if (!workout) return res.status(404).send('The workout with the given ID was not found.');
-	res.status(200).send(workout);
-});
-
-// CREATE a workout
-app.post('/api/workouts', (req, res) => {
-	const { error } = validateWorkout(req.body);
-	if (error) return res.status(400).send(error.message);
-
-	const workout = {
-		// this will change when we add the database
-		id: workouts.length + 1,
-		name: req.body.name
-	};
-	workouts.push(workout);
-	res.status(201).send(workout);
-});
-
-// DELETE workout
-app.delete('/api/workouts/:id', (req, res) => {
-	// look up workout
-	const workout = workouts.find(c => c.id === parseInt(req.params.id))
-	if (!workout) return res.status(404).send('The workout with the given ID was not found.');
-	
-	// delete
-	const index = workouts.indexOf(workout);
-	workouts.splice(index, 1);
-
-	res.status(204).send();
-});
-
-// set port, listen for requests
-const PORT = process.env.PORT || 3000;
-const server = app.listen(PORT, () => {
-	console.log(`Server is running on port ${PORT}.`);
-});
-
-server.on('close', () => {
-	console.log('Goodbye.');
-	connection.end();
-});
+main().catch((e) => console.error(e));
