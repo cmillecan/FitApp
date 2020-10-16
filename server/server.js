@@ -3,11 +3,11 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const secret = require("./secret");
-const setupDB = require('./db')
+const setupDB = require('./db');
 
 const main = async () => {
-	const app = express()
-	const port = 3000
+	const app = express();
+	const port = 3000;
 
 	const dbConfig = {
 		database: secret.DB,
@@ -24,14 +24,14 @@ const main = async () => {
 
 	// api routes
     app.get('/', (req, res) => {
-        res.send('Hello World!')
+        res.send('Hello World!');
 	})
 	
 	// CREATE a user
     app.post('/api/users', async (req, res) => {
-        const {name} = req.body
-        const newUser = await User.create({name})
-        res.status(201).send(`New ID is: ${newUser.id}`)
+        const {name} = req.body;
+        const newUser = await User.create({name});
+        res.status(201).send(`New ID is: ${newUser.id}`);
 	})
 	
 	// GET users
@@ -42,20 +42,25 @@ const main = async () => {
 
 	// GET a single user
 	app.get('/api/users/:id', async (req, res) => {
-		const user = users.find(c => c.id === parseInt(req.params.id))
-		if (!user) return res.status(404).send('The user with the given ID was not found.');
-		res.status(200).send(user);
-	});
+		const oneUser = await User.findAll({
+			where: { id: req.params.id }
+		});
+        res.status(200).send(JSON.stringify(oneUser, null, 2));
+    });
 
 	// DELETE user
 	app.delete('/api/users/:id', async (req, res) => {
-		// look up user
-		const user = users.find(c => c.id === parseInt(req.params.id))
-		if (!user) return res.status(404).send('The user with the given ID was not found.');
-
-		// delete user
-		const index = users.indexOf(user);
-		users.splice(index, 1);
+		try {
+			await User.destroy({
+				where: {
+					id: req.params.id
+				}
+			})
+		} catch (error) {
+			console.error(error);
+			res.status(500).send();
+			return;
+		}
 
 		res.status(204).send();
 	});
@@ -91,20 +96,23 @@ const main = async () => {
 
 	// GET a single workout
 	app.get('/api/workouts/:id', async (req, res) => {
-		const workout = workouts.find(c => c.id === parseInt(req.params.id));
-		if (!workout) return res.status(404).send('The workout with the given ID was not found.');
-		res.status(200).send(workout);
-	});
+		const oneWorkout = await Workout.findAll({
+			where: { id: req.params.id }
+		});
+        res.status(200).send(JSON.stringify(oneWorkout, null, 2));
+    });
 
-	// DELETE workout
+	// DELETE a workout
 	app.delete('/api/workouts/:id', async (req, res) => {
-		// look up workout
-		const workout = workouts.find(c => c.id === parseInt(req.params.id));
-		if (!workout) return res.status(404).send('The workout with the given ID was not found.');
-
-		// delete
-		const index = workouts.indexOf(workout);
-		workouts.splice(index, 1);
+		try {
+			await Workout.destroy({
+				where: { id: req.params.id }
+			});
+	 	} catch (error) {
+			console.error(error);
+			res.status(500).send();
+			return;
+		}
 
 		res.status(204).send();
 	});

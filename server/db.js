@@ -13,6 +13,7 @@ const setupDB = async ({host, database, user, password}) => {
         return;
     }
     console.log('Connected to db');
+
     // users schema
     const User = sequelize.define('User', {
         id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
