@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Button } from './Button';
-import { Link } from 'react-router-dom';
-import './navbar.css';
+import { NavLink } from 'react-router-dom';
+import './Navbar.css';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -28,54 +28,60 @@ function Navbar() {
     <>
       <nav className='navbar'>
         <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+          <NavLink to='/' className='navbar-logo' onClick={closeMobileMenu}>
             FitApp
-            <i class='fab fa-typo3' />
-          </Link>
+          </NavLink>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
           </div>
           <ul className={click ? 'nav-menu active' : 'nav-menu'}>
             <li className='nav-item'>
-              <Link to='/plan' className='nav-links' onClick={closeMobileMenu}>
+              <NavLink
+                activeClassName='is-active'
+                to='/plan'
+                className='nav-links'
+                onClick={closeMobileMenu}>
                 Plan
-              </Link>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link
+              <NavLink
+                activeClassName='is-active'
                 to='/history'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
                 History
-              </Link>
+              </NavLink>
             </li>
             <li className='nav-item'>
-              <Link
+              <NavLink
+                activeClassName='is-active'
                 to='/account'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Account
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
+                activeClassName='is-active'
                 to='/log-in'
                 className='nav-links'
                 onClick={closeMobileMenu}
               >
                 Log in
-              </Link>
+              </NavLink>
             </li>
             <li>
-              <Link
+              <NavLink
                 to='/sign-up'
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
                 Sign Up
-              </Link>
+              </NavLink>
             </li>
           </ul>
           {button && <Button buttonStyle='btn--outline'>SIGN UP</Button>}

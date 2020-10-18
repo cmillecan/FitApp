@@ -1,6 +1,16 @@
 import React from 'react';
 import '../../App.css';
+import Account from '../Account';
+import '../Account.css'
+import Footer from '../Footer';
 
-export default function Account() {
-  return <h1 className='acount'>Account</h1>;
+function Profile() {
+  return (
+    <>
+      <Account />
+      <Footer />
+    </>
+  );
 }
+
+export default Profile;

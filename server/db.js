@@ -16,7 +16,7 @@ const setupDB = async ({host, database, user, password}) => {
 
     // users schema
     const User = sequelize.define('User', {
-        id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
+        id: { type: DataTypes.STRING, primaryKey: true },
         name: { type: DataTypes.STRING, allowNull: false }
     }, {});
 
@@ -24,7 +24,7 @@ const setupDB = async ({host, database, user, password}) => {
     const Workout = sequelize.define('Workout', {
         id: { type: DataTypes.INTEGER, autoIncrement: true, primaryKey: true },
         userId: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             references: {
                 model: User,
                 key: 'id',
