@@ -1,4 +1,4 @@
-.account-container {
+.plan-container {
     background: #fff;
     /* background: url('/images/img-home.jpg') center center/cover no-repeat; */
     height: 80vh;
@@ -10,7 +10,7 @@
     /*    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2); */
 }
 
-.profileCard {
+.workoutForm {
     height: 500px;
     width: 400px;
     display: flex;

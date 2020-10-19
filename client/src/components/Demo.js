@@ -11,10 +11,6 @@ function Cards() {
               text='Explore the hidden waterfall deep inside the Amazon Jungle'
               label='Adventure'
             />
-        <div className='cards__wrapper'>
-
-
-        </div>
       </div>
     </div>
   );
