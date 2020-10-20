@@ -15,7 +15,7 @@
     width: 400px;
     display: flex;
     flex-direction: column;
-    box-shadow: 3px 3px 8px rgba(118, 119, 119, 0.17);
+    box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);
     -webkit-filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     filter: drop-shadow(0 6px 20px rgba(56, 125, 255, 0.017));
     margin: 40px;

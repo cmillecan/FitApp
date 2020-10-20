@@ -29,7 +29,7 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <NavLink to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            FitApp
+            FitApp <i className="far fa-calendar-alt"></i>
           </NavLink>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -64,17 +64,25 @@ function Navbar() {
                 Account
               </NavLink>
             </li>
-            <li>
+            <li className='nav-item'>
               <NavLink
-                to='/api/auth/google'
+                  activeClassName='is-active'
+                  to='/api/auth/google'
+                  className='nav-links'
+                  onClick={closeMobileMenu}
+              >
+                Sign-in
+              </NavLink>
+            </li>
+            <li>
+              <div
                 className='nav-links-mobile'
                 onClick={closeMobileMenu}
               >
-                Log in
-              </NavLink>
+              </div>
             </li>
           </ul>
-          {button && <Button buttonStyle='btn--outline'>LOG IN</Button>}
+          {/*{button && <Button buttonStyle='btn--outline'>LOG IN</Button>}*/}
         </div>
       </nav>
     </>

@@ -12,25 +12,42 @@
 
 .exerciseItem {
   display: flex;
-  border-left: 1px solid rgb(228, 165, 255);
   padding-left: 5px;
   margin: 3px 0;
+  border-left: 3px solid rgb(255, 90, 247);
+  background: rgb(250, 214, 248);
 }
 
 .exerciseItem > span {
   width: 65px;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+  font-weight: normal;
+  color: #373737;
 }
 
 .date {
   text-align: center;
   width: 100%;
   padding: 5px 0 25px;
+  color: #00367c;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }
 
 .category {
+  border-radius: 10px;
+  background:rgb(0, 161, 189);
   text-align: center;
-  width: 100%;
-  border-bottom: 1px solid black;
+  width: 20%;
   padding: 5px;
   margin-bottom: 10px;
+  color: #fff;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
+}
+
+.notes {
+  text-align: left;
+  padding: 5px;
+  margin-bottom: 10px;
+  color: aqua;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Helvetica Neue, Arial, Noto Sans, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol, Noto Color Emoji;
 }

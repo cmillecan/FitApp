@@ -1,7 +1,15 @@
 .cards {
-  height: 80vh;
+  height: 100vh;
   padding: 4rem;
-  background: linear-gradient(#f1f1f1, #fff);;
+  background: #fffbf5;
+}
+
+.contentStyle {
+  height: 160px;
+  color: #fff;
+  line-height: 160px;
+  text-align: center;
+  background: #364d79;
 }
 
 h1 {

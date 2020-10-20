@@ -95,7 +95,7 @@
     }
 
     .nav-menu.active {
-        background: #ccc;
+        background: #fff;
         left: 0;
         opacity: 1;
         transition: all 0.5s ease;
@@ -124,7 +124,10 @@
     }
 
     .is-active {
-
+        background-color: #fff;
+        color: #242424;
+        border-radius: 0;
+        opacity: 50%;
     }
 
     .menu-icon {

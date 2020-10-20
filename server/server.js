@@ -7,6 +7,7 @@ const setupDB = require('./db');
 const passport = require("passport");
 const passportGoogle = require("passport-google-oauth");
 const cookieSession = require("cookie-session");
+const path = require('path');
 
 const main = async () => {
 	const app = express();
@@ -81,10 +82,8 @@ const main = async () => {
 	app.use(bodyParser.urlencoded({ extended: true }));
 
 	// api routes
-    app.get('/', (req, res) => {
-        res.send('Hello World!');
-	})
-	
+	app.use('/', express.static(path.join(__dirname, '../client/build')));
+
 	// CREATE a user
     app.post('/api/users', async (req, res) => {
         const {name} = req.body;
@@ -177,6 +176,11 @@ const main = async () => {
 		}
 
 		res.status(204).send();
+	});
+
+	// Handles any requests that don't match the ones above
+	app.get('*', (req,res) =>{
+		res.sendFile(path.join(__dirname + '/../client/build/index.html'));
 	});
 
 	// set port, listen for requests

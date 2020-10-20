@@ -10,6 +10,7 @@ function HeroSection() {
     { exercise: "deadlift", schema: "3 x 10", weight: 135, unit: "lb" },
     { exercise: "bench", schema: "3 x 10", weight: 135, unit: "lb" }
   ]
+
   return (
     <div className='hero-container'>
       <div className='hero-left'>
@@ -38,7 +39,7 @@ function HeroSection() {
 
       {/* right container */}
       <div className='hero-right'>
-        <WorkoutCard date="Today" category="Legs" exercises={exercises} />
+        <WorkoutCard date="Today" category="Legs" exercises={exercises} notes="Notes: sldkfjsldkjfslkdjfsldkfjkldsfjdklsjfdklsfj"/>
       </div>
     </div>
   );
