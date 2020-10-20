@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Button } from './Button';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
 
@@ -65,14 +64,12 @@ function Navbar() {
               </NavLink>
             </li>
             <li className='nav-item'>
-              <NavLink
-                  activeClassName='is-active'
-                  to='/api/auth/google'
+              <a
+                  href='/api/auth/google'
                   className='nav-links'
-                  onClick={closeMobileMenu}
               >
                 Sign-in
-              </NavLink>
+              </a>
             </li>
             <li>
               <div

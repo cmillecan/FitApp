@@ -77,6 +77,13 @@
     display: none;
 }
 
+.is-active {
+    background-color: #fff;
+    color: #242424;
+border-radius: 0;
+    opacity: 50%;
+}
+
 @media screen and (max-width: 960px) {
     .NavbarItems {
         position: relative;
@@ -121,13 +128,6 @@
         top: 0;
         left: 0;
         transform: translate(25%, 50%);
-    }
-
-    .is-active {
-        background-color: #fff;
-        color: #242424;
-        border-radius: 0;
-        opacity: 50%;
     }
 
     .menu-icon {
