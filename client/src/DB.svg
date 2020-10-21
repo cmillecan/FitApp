@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16.998mm" height="10.965mm" version="1.1" viewBox="0 0 16.998 10.965" xmlns="http://www.w3.org/2000/svg">
+ <g transform="translate(-49.709 -110.11)">
+  <g transform="matrix(.50546 0 0 .50546 -17.356 -.32309)" fill="#00a1bd">
+   <g transform="translate(30.238 15.875)">
+    <g fill="#00a1bd" stroke-width="0">
+     <rect transform="scale(1,-1)" x="117.55" y="-211.29" width="14.363" height="3.7798" rx="0" ry="0"/>
+     <ellipse cx="132.93" cy="209.4" rx="3.1457" ry="6.8036"/>
+     <ellipse cx="116.29" cy="209.4" rx="3.1457" ry="6.8036"/>
+    </g>
+   </g>
+   <g transform="rotate(22.653 81.602 269.04)">
+    <g fill="#00a1bd" stroke-width="0">
+     <rect transform="scale(1,-1)" x="117.55" y="-211.29" width="14.363" height="3.7798" rx="0" ry="0"/>
+     <ellipse cx="132.93" cy="209.4" rx="3.1457" ry="6.8036"/>
+     <ellipse cx="116.29" cy="209.4" rx="3.1457" ry="6.8036"/>
+    </g>
+   </g>
+  </g>
+ </g>
+</svg>

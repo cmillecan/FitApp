@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="61.196mm" height="25.964mm" version="1.1" viewBox="0 0 61.196 25.964" xmlns="http://www.w3.org/2000/svg">
+ <g transform="matrix(2.1917 -.22192 .22192 2.1917 -131.12 -265.08)">
+  <g transform="matrix(.26383 .067689 -.067689 .26383 45.032 86.512)" fill="#00a1bd" stroke-width="0">
+   <ellipse cx="137.12" cy="151.19" rx="4.2431" ry="15.875"/>
+   <ellipse cx="57.916" cy="151.19" rx="4.2431" ry="15.875"/>
+   <rect transform="scale(1,-1)" x="45.357" y="-152.32" width="102.81" height="2.2679" rx="0" ry="0"/>
+  </g>
+ </g>
+</svg>

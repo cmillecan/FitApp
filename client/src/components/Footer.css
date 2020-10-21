@@ -29,7 +29,7 @@
 
 .social-icons {
   display: flex;
-  justify-content: space-between;
+  justify-content:space-evenly;
   align-items: center;
   width: 240px;
 }
@@ -44,6 +44,10 @@
   display: flex;
   align-items: center;
   margin-bottom: 16px;
+}
+
+.KB {
+  margin-left: 0.5rem;
 }
 
 .website-rights {

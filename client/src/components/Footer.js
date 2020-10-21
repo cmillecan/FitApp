@@ -1,6 +1,8 @@
 import React from 'react';
 import './Footer.css';
-import { Link } from 'react-router-dom';
+import {Link, NavLink} from 'react-router-dom';
+import { GithubOutlined, TwitterOutlined, LinkedinOutlined } from '@ant-design/icons';
+import KB from "../KB.svg";
 
 function Footer() {
   return (
@@ -9,27 +11,34 @@ function Footer() {
         <div className='social-media-wrap'>
           <div className='footer-logo'>
             <Link to='/' className='social-logo'>
-              FitApp
-              <i className='fab fa-typo3' />
+              FitApp <div className='KB'><img src={KB} alt='kettlebell' /></div>
             </Link>
           </div>
           <small className='website-rights'>FitApp © 2020</small>
           <div className='social-icons'>
             <Link
-              className='social-icon-link twitter'
-              to='/'
-              target='_blank'
-              aria-label='Twitter'
+                className='social-icon-link github'
+                to='github.com/cmillecan'
+                target='_blank'
+                aria-label='Github'
             >
-              <i className='fab fa-twitter' />
+              <GithubOutlined />
             </Link>
             <Link
               className='social-icon-link twitter'
-              to='/'
+              to='twitter.com/cmillecan'
+              target='_blank'
+              aria-label='Twitter'
+            >
+              <TwitterOutlined />
+            </Link>
+            <Link
+              className='social-icon-link twitter'
+              to='linkedin.com/cmillecan'
               target='_blank'
               aria-label='LinkedIn'
             >
-              <i className='fab fa-linkedin' />
+              <LinkedinOutlined />
             </Link>
           </div>
         </div>

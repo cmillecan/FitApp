@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { NavLink } from 'react-router-dom';
 import './Navbar.css';
+import KB from '../KB.svg';
 
 function Navbar() {
   const [click, setClick] = useState(false);
@@ -28,7 +29,7 @@ function Navbar() {
       <nav className='navbar'>
         <div className='navbar-container'>
           <NavLink to='/' className='navbar-logo' onClick={closeMobileMenu}>
-            FitApp <i className="far fa-calendar-alt"></i>
+            FitApp <div className='KB'><img src={KB} alt='kettlebell' /></div>
           </NavLink>
           <div className='menu-icon' onClick={handleClick}>
             <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
@@ -70,13 +71,6 @@ function Navbar() {
               >
                 Sign-in
               </a>
-            </li>
-            <li>
-              <div
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-              </div>
             </li>
           </ul>
           {/*{button && <Button buttonStyle='btn--outline'>LOG IN</Button>}*/}

@@ -6,7 +6,7 @@ import Footer from '../Footer';
 function Plan() {
   return (
     <>
-        <PlanWorkout />
+      <PlanWorkout />
       <Footer />
     </>
   );

@@ -11,8 +11,8 @@
 }
 
 .profileCard {
-    height: 500px;
-    width: 400px;
+    height: 400px;
+    width: 300px;
     display: flex;
     flex-direction: column;
     box-shadow: 0 6px 20px rgba(56, 125, 255, 0.17);

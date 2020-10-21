@@ -29,10 +29,8 @@
     align-items: center;
 }
 
-.fa-typo3 {
-    color: rgb(0, 161, 189);
+.KB {
     margin-left: 0.5rem;
-    font-size: 1.8rem;
 }
 
 .nav-menu {
@@ -51,7 +49,7 @@
 }
 
 .nav-links {
-    color: rgb(0, 161, 189);
+    color: rgb(255, 157, 38);
     display: flex;
     align-items: center;
     text-decoration: none;
@@ -60,9 +58,9 @@
 }
 
 .nav-links:hover {
-    border-bottom: 4px solid rgb(255, 157, 38);
+    color: rgb(255, 157, 38);
+    border-bottom: 4px solid rgb(0, 161, 189);
     transition: all 0.2s ease-out;
-    opacity: 50%;
 }
 
 .fa-bars {
@@ -79,8 +77,8 @@
 
 .is-active {
     background-color: #fff;
-    color: #242424;
-border-radius: 0;
+    color: rgb(255, 157, 38);
+    border-radius: 0;
     opacity: 50%;
 }
 
@@ -154,7 +152,7 @@ border-radius: 0;
         text-decoration: none;
         font-size: 1.5rem;
         background-color: transparent;
-        color: rgb(0, 161, 189);
+        color: rgb(255, 157, 38);
         padding: 14px 20px;
         border: 1px solid rgb(255, 157, 38);
         transition: all 0.3s ease-out;
