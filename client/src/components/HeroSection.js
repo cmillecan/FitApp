@@ -24,6 +24,7 @@ function HeroSection() {
           <p>Welcome to FitApp, an easy and paperless way to keep track of your workouts.</p>
           <div className='hero-btns'>
             <Button
+
               className='btns'
               buttonStyle='btn--outline'
               buttonSize='btn--large'

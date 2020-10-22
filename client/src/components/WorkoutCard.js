@@ -11,10 +11,7 @@ const WorkoutCard = ({date, exercises, category, notes}) => {
 
   return (
       <div className="workoutCard">
-        <div className='top-card'>
-            <div className='cal'><CalendarTwoTone twoToneColor='#ffa23e' /></div>
-            <div className="date" >{date}</div>
-        </div>
+          <div className="date" ><CalendarTwoTone twoToneColor='#AFE0E7' /> {date}</div>
 
         <div className='category'>{category}</div>
         {renderExercises}

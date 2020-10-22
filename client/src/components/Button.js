@@ -22,7 +22,7 @@ export const Button = ({
     : SIZES[0];
 
     return (
-      <Link to='/log-in' className='btn-mobile'>
+      <a href='/api/auth/google' className='btn-mobile'>
         <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}
@@ -30,6 +30,6 @@ export const Button = ({
         >
           {children}
         </button>
-      </Link>
+      </a>
     )
 };
