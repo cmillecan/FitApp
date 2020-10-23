@@ -7,6 +7,7 @@ import Plan from "./components/pages/Plan";
 import History from "./components/pages/History";
 import Account from "./components/pages/Account";
 import client from "./backend-client";
+import Footer from "./components/Footer";
 
 function App() {
   const [user, setUser] = useState();
@@ -33,6 +34,7 @@ function App() {
             <Route path="/history" component={History} />
             <Route path="/account" component={Account} />
           </Switch>
+            <Footer />
         </Router>
       </>
   );

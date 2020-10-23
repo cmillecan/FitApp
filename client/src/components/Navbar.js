@@ -76,9 +76,8 @@ function Navbar({ user }) {
                   Account
                 </NavLink>
               </li>
-              <li className="nav-item">{auth}</li>
+              <li className="user">{auth}</li>
             </ul>
-            {/*{button && <Button buttonStyle='btn--outline'>LOG IN</Button>}*/}
           </div>
         </nav>
       </>

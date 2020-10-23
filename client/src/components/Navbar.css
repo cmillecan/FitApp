@@ -28,6 +28,9 @@
     display: flex;
     align-items: center;
 }
+.navbar-logo:hover {
+    color: rgb(0, 161, 189);
+}
 
 .KB {
     margin-left: 0.5rem;
@@ -46,6 +49,15 @@
 
 .nav-item {
     height: 80px;
+}
+
+.user {
+    color: rgb(181, 181, 181);
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    height: 100%;
 }
 
 .nav-links {
@@ -116,9 +128,8 @@
 
     .nav-links:hover {
         background-color: #fff;
-        color: #242424;
+        color: rgb(255, 157, 38);
         border-radius: 0;
-        opacity: 50%;
     }
 
     .navbar-logo {
@@ -161,6 +172,5 @@
     .nav-links-mobile:hover {
         background: transparent;
         transition: 250ms;
-        opacity: 50%;
     }
 }

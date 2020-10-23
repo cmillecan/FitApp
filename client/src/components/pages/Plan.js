@@ -1,13 +1,11 @@
 import React from 'react';
 import '../../App.css';
-import PlanWorkout from '../PlanWorkout.js'
-import Footer from '../Footer';
+import CreateWorkout from '../CreateWorkout.js'
 
 function Plan() {
   return (
     <>
-      <PlanWorkout />
-      <Footer />
+      <CreateWorkout />
     </>
   );
 }
