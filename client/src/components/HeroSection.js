@@ -32,10 +32,6 @@ function HeroSection() {
               GET STARTED
             </Button>
           </div>
-          <div className='pictures'>
-            <div className='BB'><img src={BB} alt='barbell' /></div>
-            <div className='DB'><img src={DB} alt='dumbbell' /></div>
-        </div>
       </div>
       </div>
 

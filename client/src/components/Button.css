@@ -38,7 +38,8 @@
     color: rgb(0, 161, 189);
     padding: 8px 20px;
     border: 1px solid rgb(255, 157, 38);
-    transition: all 0.3s ease-ouddt;
+    transition: all 0.3s ease-out;
+    opacity: 0.5;
 }
 
 .btn-medium {

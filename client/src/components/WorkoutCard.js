@@ -11,7 +11,7 @@ const WorkoutCard = ({date, exercises, category, notes}) => {
 
   return (
       <div className="workoutCard">
-          <div className="date" ><CalendarTwoTone twoToneColor='#AFE0E7' /> {date}</div>
+          <div className="date" ><CalendarTwoTone twoToneColor='#00A1BD' /> {date}</div>
 
         <div className='category'>{category}</div>
         {renderExercises}
