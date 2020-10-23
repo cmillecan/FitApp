@@ -1,6 +1,6 @@
 import React from 'react';
 import './Footer.css';
-import {Link, NavLink} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { GithubOutlined, TwitterOutlined, LinkedinOutlined } from '@ant-design/icons';
 import KB from "../KB.svg";
 

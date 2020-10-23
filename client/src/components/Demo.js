@@ -1,12 +1,7 @@
 import React from 'react';
 import './Demo.css';
 import { Carousel } from 'antd';
-import WorkoutCard from './WorkoutCard';
 import './WorkoutCard.css';
-
-function onChange(a, b, c) {
-    console.log(a, b, c);
-}
 
 function Cards() {
   return (

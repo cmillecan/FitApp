@@ -3,8 +3,6 @@ import '../App.css';
 import { Button } from './Button';
 import './HeroSection.css';
 import WorkoutCard from './WorkoutCard';
-import BB from '../BB.svg';
-import DB from '../DB.svg';
 
 function HeroSection() {
   const exercises = [
