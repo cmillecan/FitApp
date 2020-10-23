@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import "./Navbarr.css";
+import "./Navbar.css";
 import KB from "../KB.svg";
 
-function Navbarr({ user }) {
+function Navbar({ user }) {
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -85,4 +85,4 @@ function Navbarr({ user }) {
   );
 }
 
-export default Navbarr;
+export default Navbar;
