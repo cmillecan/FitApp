@@ -35,7 +35,7 @@ function HeroSection() {
 
       {/* right container */}
       <div className='hero-right'>
-        <WorkoutCard date="Today" category="Exercise Category" exercises={exercises} notes="Notes: sldkfjsldkjfslkdjfsllsdkfjsldkjflsdkjflsdkjflsdkfjlsdkjfldskjfldskjflsdkjfklsddkfjkldsfjdklsjfdklsfj"/>
+        <WorkoutCard content={{date: 'Today', category: 'Upper body', exercises, notes: 'Notes: sldkfjsl dkj fslk djfslls dkfjsl dkjfls'}} />
       </div>
     </div>
   );

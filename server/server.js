@@ -95,6 +95,12 @@ const main = async () => {
         }
     );
 
+    // sign-out route
+    app.get("api/auth/logout", (req, res) => {
+        req.logout();
+        res.send(req.user);
+    });
+
     // parse requests of content-type - application/json
     app.use(bodyParser.json());
     // parse requests of content-type - application/x-www-form-urlencoded
@@ -152,6 +158,7 @@ const main = async () => {
             return;
         }
 
+        console.log('body is: ', req.body);
         const { exercise, category, weight, unit, schema, notes } = req.body;
         const newWorkout = {
             userId,

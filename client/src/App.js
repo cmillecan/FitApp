@@ -30,9 +30,9 @@ function App() {
           <Navbar user={user} />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/plan" component={Plan} />
-            <Route path="/history" component={History} />
-            <Route path="/account" component={Account} />
+            <Route path="/plan" render={(props) => <Plan {...props} userId={user.id} />} />
+            <Route path="/history" render={(props) => <History {...props} userId={user.id} />} />
+            <Route path="/account" render={(props) => <Account {...props} user={user} />} />
           </Switch>
             <Footer />
         </Router>

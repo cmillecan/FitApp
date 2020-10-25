@@ -1,29 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import '../../App.css';
-import CreateWorkout from "../CreateWorkout";
-import client from "../../backend-client";
+import WorkoutList from "../History";
 
-function History() {
-    const [workout, setWorkout] = useState();
-
-    useEffect(() => {
-        client
-            .getUser()
-            .then((res) => res.json())
-            .then((data) => {
-                data && setWorkout(data);
-            })
-            .catch((e) => {
-                console.error("getUser failed: ", e);
-            });
-    }, []);
-
-
-  return (
-      <>
-        <CreateWorkout />
-      </>
-  );
+function History( { userId }) {
+    return (
+        <WorkoutList userId={userId} />
+    );
 }
 
 export default History;

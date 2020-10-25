@@ -1,5 +1,5 @@
-.cards {
-  height: auto;
+.demo-container {
+  height: 70vh;
   padding: 4rem;
   background: #fffbf5;
   flex-direction: column;
@@ -7,21 +7,40 @@
   align-items: center;
 }
 
-.contentStyle {
-  height: 400px;
-  color: #fff;
+.cards-content {
+    display: flex;
+  justify-content: space-evenly;
   line-height: 160px;
   text-align: center;
-  background: rgb(175, 224, 231);
 }
 
-.demoDiv {
-  display: flex;
-  justify-content: center;
+.card {
+  width: 500px;
+  height: 250px;
+  display: flex;                /* Children use Flexbox */
+  flex-direction: column;       /* Rotate Axis */
+  border: 1px solid #EF9A9A;    /* Set up Border */
+  border-radius: 4px;           /* Slightly Curve edges */
+  overflow: hidden;             /* Fixes the corners */
+  margin: 5px;                  /* Add space between cards */
 }
-.demo {
-  width: 800px;
-  align-content: center;
+
+.card-header {
+  color: #D32F2F;
+  text-align: center;
+  font-size: 12px;
+  font-weight: 600;
+  border-bottom: 1px solid #EF9A9A;
+  background-color: #FFEBEE;
+  padding: 5px 10px;
+}
+
+.card-main {
+  display: flex;              /* Children use Flexbox */
+  flex-direction: column;     /* Rotate Axis to Vertical */
+  justify-content: center;    /* Group Children in Center */
+  align-items: center;        /* Group Children in Center (on cross axis) */
+  padding: 15px 0;            /* Add padding to the top/bottom */
 }
 
 h1 {

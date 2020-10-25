@@ -2,11 +2,9 @@ import React from 'react';
 import '../../App.css';
 import CreateWorkout from '../CreateWorkout.js'
 
-function Plan() {
+function Plan({userId}) {
   return (
-    <>
-      <CreateWorkout />
-    </>
+      <CreateWorkout userId={userId} />
   );
 }
 

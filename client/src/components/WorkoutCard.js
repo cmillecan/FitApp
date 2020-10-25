@@ -2,7 +2,9 @@ import React from 'react';
 import './WorkoutCard.css';
 import { CalendarTwoTone} from '@ant-design/icons';
 
-const WorkoutCard = ({date, exercises, category, notes}) => {
+const WorkoutCard = ({content}) => {
+  const {date, exercises, category, notes} = content;
+  // TODO: Connie - how are we storing exercises in the database?
   const renderExercises = exercises.map(e => <div className="exerciseItem">
     <span>{e.exercise}</span>
     <span>{e.schema}</span>

@@ -1,28 +1,34 @@
 import React from 'react';
 import './Demo.css';
-import { Carousel } from 'antd';
-import './WorkoutCard.css';
 
 function Cards() {
   return (
-    <div className='cards'>
-      <h1>HOW IT WORKS</h1>
-        <div className='demoDiv'>
-        <div className='demo'>
-        <Carousel autoplay>
-            <div>
-                <h3 className='contentStyle'>1 Sign in with Google</h3>
-            </div>
-            <div>
-                <h3 className='contentStyle'>2 Create a workout</h3>
-            </div>
-            <div>
-                <h3 className='contentStyle'>3 View your workout</h3>
-            </div>
-        </Carousel>
-        </div>
-        </div>
-    </div>
+      <div className='demo-container'>
+          <h1>HOW IT WORKS</h1>
+          <div className='cards-content'>
+              <div className="card">
+                  <div className="card-header">Night</div>
+                  <div className="card-main">
+                      <i className="material-icons">hot_tub</i>
+                      <div className="main-description">Hot Tub</div>
+                  </div>
+              </div>
+              <div className="card">
+                  <div className="card-header">Night</div>
+                  <div className="card-main">
+                      <i className="material-icons">hot_tub</i>
+                      <div className="main-description">Hot Tub</div>
+                  </div>
+              </div>
+              <div className="card">
+                  <div className="card-header">Night</div>
+                  <div className="card-main">
+                      <i className="material-icons">hot_tub</i>
+                      <div className="main-description">Hot Tub</div>
+                  </div>
+              </div>
+          </div>
+      </div>
   );
 }
 
