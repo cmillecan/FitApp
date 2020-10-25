@@ -1,22 +1,48 @@
 import React from 'react';
 import '../../App.css';
 import '../Account.css'
+import client from "../../backend-client";
+import { Divider } from 'antd';
+import {useHistory} from "react-router-dom";
 
-function Account({user}) {
+function Account({user, setUser}) {
+    const history = useHistory();
+    const onSignOut = () => {
+        client
+            .signOut().then(() => {
+                setUser(null);
+            history.push('/')
+        })
+    }
+    if (!user) {
+        return <div>Not logged in!</div>;
+    }
 
-  return (
-      <div className='account-container'>
-        {/* User Information */}
-        <div className='profileCard'>
-          <div>Hello {user.name}</div>
+    const onDeleteUser = () => {
+        client
+            .deleteUser().then(() => {
+                setUser(null);
+            history.push('/')
+        })
+    }
 
-          <a href="/api/auth/logout">
-            Sign-out
-          </a>
-          <div className='delete-btn'>Delete account</div>
+    return (
+        <div className='account-container'>
+            {/* User Information */}
+            <div className='profileCard'>
+                <div className='userName'>Hello, {user.name}!</div>
+                <div className='buttons'>
+                    <div className='sign-out' onClick={onSignOut}>
+                        SIGN-OUT
+                    </div>
+                    <Divider />
+                    <div className='delete-btn' onClick={onDeleteUser}>
+                        DELETE ACCOUNT
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-  );
+    );
 }
 
 export default Account;

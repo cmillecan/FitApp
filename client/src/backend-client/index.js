@@ -4,6 +4,9 @@ const client = {
     getUser() {
         return fetch(`${host}/api/users`);
     },
+    signOut() {
+        return fetch(`${host}/api/auth/logout`)
+    },
     deleteUser(userId) {
         return fetch (`${host}/api/users/${userId}`, {method: 'delete'})
     },

@@ -32,55 +32,74 @@ function Navbar({ user }) {
       </a>
   );
 
-  return (
-      <>
-        <nav className="navbar">
-          <div className="navbar-container">
-            <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
-              FitApp{" "}
-              <div className="KB">
-                <img src={KB} alt="kettlebell" />
-              </div>
-            </NavLink>
-            <div className="menu-icon" onClick={handleClick}>
-              <i className={click ? "fas fa-times" : "fas fa-bars"} />
+  const navUser = user ? (
+      <nav className="navbar">
+        <div className="navbar-container">
+          <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            FitApp{" "}
+            <div className="KB">
+              <img src={KB} alt="kettlebell" />
             </div>
-            <ul className={click ? "nav-menu active" : "nav-menu"}>
-              <li className="nav-item">
-                <NavLink
-                    activeClassName="is-active"
-                    to="/plan"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                >
-                  Plan
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                    activeClassName="is-active"
-                    to="/history"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                >
-                  History
-                </NavLink>
-              </li>
-              <li className="nav-item">
-                <NavLink
-                    activeClassName="is-active"
-                    to="/account"
-                    className="nav-links"
-                    onClick={closeMobileMenu}
-                >
-                  Account
-                </NavLink>
-              </li>
-              <li className="user">{auth}</li>
-            </ul>
+          </NavLink>
+          <div className="menu-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"} />
           </div>
-        </nav>
-      </>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <NavLink
+                  activeClassName="is-active"
+                  to="/plan"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+              >
+                Plan
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                  activeClassName="is-active"
+                  to="/history"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+              >
+                History
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                  activeClassName="is-active"
+                  to="/account"
+                  className="nav-links"
+                  onClick={closeMobileMenu}
+              >
+                Account
+              </NavLink>
+            </li>
+            <li className="user">{auth}</li>
+          </ul>
+        </div>
+      </nav>
+  ) : (
+      <nav className="navbar">
+        <div className="navbar-container">
+          <NavLink to="/" className="navbar-logo" onClick={closeMobileMenu}>
+            FitApp{" "}
+            <div className="KB">
+              <img src={KB} alt="kettlebell" />
+            </div>
+          </NavLink>
+          <div className="menu-icon" onClick={handleClick}>
+            <i className={click ? "fas fa-times" : "fas fa-bars"} />
+          </div>
+          <ul className={click ? "nav-menu active" : "nav-menu"}>
+            <li className="user">{auth}</li>
+          </ul>
+        </div>
+      </nav>
+  );
+
+  return (
+      <div>{navUser}</div>
   );
 }
 

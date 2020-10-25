@@ -20,24 +20,22 @@
     color:rgb(255, 255, 255);
     border: 0px solid rgba(0, 0, 0, 0.372);
     transition: all 0.3s ease-out;
-    opacity: 50%;
+    opacity: 0.5;
 }
 
 .btn--outline {
     font-weight: bold;
-    background-color: rgb(255, 185, 105);
+    background-color: rgb(255, 157, 38);
     color: rgb(0, 0, 0);
     padding: 8px 20px;
-    border: 1px solid rgb(255, 157, 38);
     transition: all 0.3s ease-out;
 }
 
 .btn--outline:hover {
     font-weight: bold;
-    background-color: rgb(255, 185, 105);
+    background-color: rgb(255, 157, 38);
     color: rgb(0, 0, 0);
     padding: 8px 20px;
-    border: 1px solid rgb(255, 157, 38);
     transition: all 0.3s ease-out;
     opacity: 0.5;
 }
@@ -57,5 +55,5 @@
     background: #fff;
     color: #242424;
     transition: all 0.3s ease-out;
-    opacity: 50%;
+    opacity: 0.5;
 }
