@@ -1,5 +1,5 @@
 .demo-container {
-  height: 70vh;
+  height: 60vh;
   padding: 4rem;
   background: #fffbf5;
   flex-direction: column;
@@ -8,39 +8,46 @@
 }
 
 .cards-content {
-    display: flex;
-  justify-content: space-evenly;
-  line-height: 160px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
   text-align: center;
+  margin-top: 100px;
 }
 
 .card {
-  width: 500px;
-  height: 250px;
-  display: flex;                /* Children use Flexbox */
-  flex-direction: column;       /* Rotate Axis */
-  border: 1px solid #EF9A9A;    /* Set up Border */
-  border-radius: 4px;           /* Slightly Curve edges */
-  overflow: hidden;             /* Fixes the corners */
-  margin: 5px;                  /* Add space between cards */
+  width: 600px;
+  margin: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(255, 157, 38);
+  border-radius: 4px;
+  overflow: hidden;
 }
 
 .card-header {
-  color: #D32F2F;
+    background-image: url("../DB.svg");
+  height: 250px;
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-  border-bottom: 1px solid #EF9A9A;
-  background-color: #FFEBEE;
+  border-bottom: 1px solid rgb(255, 157, 38);;
+  background-color: rgb(252, 228, 201);
   padding: 5px 10px;
 }
 
 .card-main {
+  height: 50px;
+  background: #fff;
+  color: rgb(0, 161, 189);
   display: flex;              /* Children use Flexbox */
+  justify-content: center;
   flex-direction: column;     /* Rotate Axis to Vertical */
-  justify-content: center;    /* Group Children in Center */
-  align-items: center;        /* Group Children in Center (on cross axis) */
-  padding: 15px 0;            /* Add padding to the top/bottom */
+}
+
+.main-description {
+  font-weight: bold;
+  text-align: center;
 }
 
 h1 {
@@ -49,7 +56,9 @@ h1 {
 }
 
 @media only screen and (max-width: 728px) {
-  .demo {
-    width: 400px;
+  .cards-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 }

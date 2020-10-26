@@ -18,7 +18,7 @@ const main = async () => {
         password: secret.PASSWORD,
         user: secret.USER,
     };
-    const { User, Workout } = await setupDB(dbConfig);
+    const { User, Workout, Exercise } = await setupDB(dbConfig);
 
     // setup passport
     const GoogleStrategy = passportGoogle.OAuth2Strategy;
@@ -158,33 +158,26 @@ const main = async () => {
             return;
         }
 
-        console.log('body is: ', req.body);
-        const { exercise, category, weight, unit, schema, notes } = req.body;
+        const { exercises, category, notes } = req.body;
         const newWorkout = {
             userId,
-            exercise,
             category,
         };
-        if (weight) newWorkout.weight = weight;
-        if (unit) newWorkout.unit = unit;
-        if (schema) newWorkout.schema = schema;
         if (notes) newWorkout.notes = notes;
         let dbWorkout;
         try {
+            // first create the workout
             dbWorkout = await Workout.create(newWorkout);
+            // then create the exercises and associate each to the workout just created
+            for (const e of exercises) {
+                await Exercise.create({ ...e, workoutId: dbWorkout.id });
+            }
         } catch (err) {
-            console.error("error creating user: ", err);
+            console.error("error creating workout: ", err);
             res.status(500).send();
         }
         // sending back the id which the database created for us on creation
         res.status(201).send(`New ID is: ${dbWorkout.id}`);
-    });
-
-    // GET workouts
-    // TODO: Connie - this should only be used for testing, and should be deleted once you deploy
-    app.get("/api/workouts", async (req, res) => {
-        const allWorkouts = await Workout.findAll();
-        res.status(200).send(JSON.stringify(allWorkouts, null, 2));
     });
 
     // GET workouts for a user
@@ -198,6 +191,7 @@ const main = async () => {
 
         const allWorkouts = await Workout.findAll({
             where: { userId },
+            include: [Exercise],
         });
         res.status(200).send(JSON.stringify(allWorkouts, null, 2));
     });
