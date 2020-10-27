@@ -1,5 +1,5 @@
 .demo-container {
-  height: 60vh;
+  height: 70vh;
   padding: 4rem;
   background: #fffbf5;
   flex-direction: column;
@@ -16,29 +16,27 @@
 }
 
 .card {
-  width: 600px;
   margin: 5px 10px;
   display: flex;
   flex-direction: column;
-  border: 1px solid rgb(255, 157, 38);
+  border: 1px solid rgb(0, 161, 189);
   border-radius: 4px;
   overflow: hidden;
 }
 
 .card-header {
-    background-image: url("../DB.svg");
+  background-image: url("../sign-in.png");
   height: 250px;
   text-align: center;
   font-size: 12px;
   font-weight: 600;
-  border-bottom: 1px solid rgb(255, 157, 38);;
-  background-color: rgb(252, 228, 201);
+  border-bottom: 1px solid rgb(0, 161, 189);
   padding: 5px 10px;
 }
 
 .card-main {
+  background: rgb(175, 224, 231);
   height: 50px;
-  background: #fff;
   color: rgb(0, 161, 189);
   display: flex;              /* Children use Flexbox */
   justify-content: center;

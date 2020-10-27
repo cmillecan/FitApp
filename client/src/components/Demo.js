@@ -1,6 +1,5 @@
 import React from 'react';
 import './Demo.css';
-import DB from '../DB.svg';
 
 function Cards() {
   return (
@@ -10,9 +9,10 @@ function Cards() {
 
               <div className="card">
                   <div className="card-header">
+
                   </div>
                   <div className="card-main">
-                      <div className="main-description">Sign-in with Google</div>
+                      <div className="main-description">1. Sign-in with Google</div>
                   </div>
               </div>
 
@@ -20,7 +20,7 @@ function Cards() {
                   <div className="card-header">
                   </div>
                   <div className="card-main">
-                      <div className="main-description">Create a workout</div>
+                      <div className="main-description">2. Create a workout</div>
                   </div>
               </div>
 
@@ -28,7 +28,7 @@ function Cards() {
                   <div className="card-header">
                   </div>
                   <div className="card-main">
-                      <div className="main-description">View your workouts <img src={DB} alt="Dumbbells" /></div>
+                      <div className="main-description">3. View your workout</div>
                   </div>
               </div>
           </div>

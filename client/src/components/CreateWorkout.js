@@ -1,41 +1,48 @@
-import React, {Fragment, useState} from 'react';
+import React, {useState} from 'react';
 import '../App.css';
 import './CreateWorkout.css';
 import { useForm } from "react-hook-form";
 import client from "../backend-client";
+import {useHistory} from "react-router-dom";
 
 const CreateWorkout = (props) => {
+    const history = useHistory();
     const { userId } = props;
     const { handleSubmit, register } = useForm();
+    // Add input field
+    const [exerciseInputs, setExerciseInputs] = useState([
+        {exercise:'', schema:'', weight:'', unit:''}
+    ]);
     const onSubmit = values => {
-        const { category, exercise, schema, weight, unit } = values;
+        const { category, notes } = values;
         client
             .createWorkout(userId, {
                 category,
-                exercises: [{ exercise, schema, weight, unit }],
+                notes,
+                exercises: exerciseInputs,
             })
-            .then(() => console.log("success!"))
+            .then(() => history.push('/history'))
             .catch((e) => console.error(e));
     };
 
-    // Add input field
-    const [inputFields, setInputFields] = useState([
-        {exercise:'', sets:'', wt:'', lbs:''}
-    ]);
-
     const handleAddFields = () => {
-        const values = [...inputFields];
-        values.push({exercise:'', sets:'', wt:'', lbs:''});
-        setInputFields(values);
+        const values = [...exerciseInputs];
+        values.push({exercise:'', schema:'', weight:'', unit:''});
+        setExerciseInputs(values);
     };
     const handleInputChange = (index, event) => {
-        const values = [...inputFields];
-        if (event.target.name === "firstName") {
-            values[index].firstName = event.target.value;
-        } else {
-            values[index].lastName = event.target.value;
+        const values = [...exerciseInputs];
+        if (event.target.name === 'exercise') {
+            values[index].exercise = event.target.value;
+        } else if (event.target.name === 'schema') {
+            values[index].schema = event.target.value;
+        } else if (event.target.name === 'weight') {
+            values[index].weight = event.target.value;
+        } else if (event.target.name === 'unit') {
+            values[index].unit = event.target.value;
         }
-}
+        setExerciseInputs(values);
+    }
 
     return (
         <div className='plan-container'>
@@ -49,36 +56,32 @@ const CreateWorkout = (props) => {
                                 category*
                                 <input className='cat' type='text' name='category' ref={register} />
                             </label>
-
-                            {inputFields.map((inputField, index) => (
-                                <Fragment key={`${inputField}~${index}`}>
-
-                            <div className='exercise-row'>
-                                <label>
-                                    exercise*
-                                    <input className='ex' type='text' name='exercise' ref={register} onChange={event => handleInputChange(index, event)} />
-                                </label>
-                                <label>
-                                    sets/reps
-                                    <input className='sets' type='text' name='schema' ref={register} />
-                                </label>
-                                <label>
-                                    wt
-                                    <input className='wt' type='text' name='weight' ref={register} />
-                                </label>
-                                <label>
-                                    lbs
-                                    <input className='lbs' type='text' name='unit' ref={register} />
-                                </label>
-                                <button
-                                    className='add-btn'
-                                    type="button"
-                                    onClick={() => handleAddFields()}
-                                >
-                                    +
-                                </button>
-                            </div>
-                                </Fragment>
+                            {exerciseInputs.map((inputField, index) => (
+                                <div key={`${inputField}~${index}`} className='exercise-row'>
+                                    <label>
+                                        exercise*
+                                        <input className='ex' type='text' name='exercise' onChange={event => handleInputChange(index, event)} />
+                                    </label>
+                                    <label>
+                                        sets/reps
+                                        <input className='sets' type='text' name='schema' onChange={event => handleInputChange(index, event)} />
+                                    </label>
+                                    <label>
+                                        wt
+                                        <input className='wt' type='text' name='weight' onChange={event => handleInputChange(index, event)} />
+                                    </label>
+                                    <label>
+                                        lbs
+                                        <input className='lbs' type='text' name='unit' onChange={event => handleInputChange(index, event)} />
+                                    </label>
+                                    <button
+                                        className='add-btn'
+                                        type="button"
+                                        onClick={() => handleAddFields()}
+                                    >
+                                        +
+                                    </button>
+                                </div>
                             ))}
                             <label>
                                 notes

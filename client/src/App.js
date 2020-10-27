@@ -24,13 +24,15 @@ function App() {
         });
   }, []);
 
+  const userId = user ? user.id : '';
+
   return (
         <Router>
           <Navbar user={user} />
           <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/plan" render={(props) => <Plan {...props} userId={user.id} />} />
-            <Route path="/history" render={(props) => <History {...props} userId={user.id} />} />
+            <Route path="/plan" render={(props) => <Plan {...props} userId={userId} />} />
+            <Route path="/history" render={(props) => <History {...props} userId={userId} />} />
             <Route path="/account" render={(props) => <Account {...props} user={user} setUser={setUser} />} />
           </Switch>
             <Footer />

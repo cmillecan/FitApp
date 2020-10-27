@@ -53,6 +53,7 @@ const setupDB = async ({ host, database, user, password }) => {
             },
             allowNull: false,
         },
+        exercise: { type: DataTypes.STRING, allowNull: false },
         schema: { type: DataTypes.STRING },
         weight: { type: DataTypes.INTEGER },
         unit: { type: DataTypes.STRING },

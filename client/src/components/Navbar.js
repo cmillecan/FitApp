@@ -75,7 +75,9 @@ function Navbar({ user }) {
                 Account
               </NavLink>
             </li>
-            <li className="user">{auth}</li>
+            <li className="nav-item">
+                <li className="user">{auth}</li>
+            </li>
           </ul>
         </div>
       </nav>

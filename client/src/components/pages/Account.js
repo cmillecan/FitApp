@@ -11,8 +11,8 @@ function Account({user, setUser}) {
         client
             .signOut().then(() => {
                 setUser(null);
-            history.push('/')
-        })
+                history.push('/')
+            })
     }
     if (!user) {
         return <div>Not logged in!</div>;
@@ -20,8 +20,8 @@ function Account({user, setUser}) {
 
     const onDeleteUser = () => {
         client
-            .deleteUser().then(() => {
-                setUser(null);
+            .deleteUser(user.id).then(() => {
+            setUser(null);
             history.push('/')
         })
     }

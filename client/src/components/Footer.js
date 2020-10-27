@@ -11,14 +11,14 @@ function Footer() {
         <div className='social-media-wrap'>
           <div className='footer-logo'>
             <Link to='/' className='social-logo'>
-              FitApp <div className='KB'><img src={KB} alt='kettlebell' /></div>
+              FitApp <div className='KB'><img src={KB} alt='kettlebell icon' /></div>
             </Link>
           </div>
           <small className='website-rights'>FitApp © 2020</small>
           <div className='social-icons'>
             <Link
                 className='social-icon-link github'
-                to='github.com/cmillecan'
+                to='github.com/cmillecan/FitApp'
                 target='_blank'
                 aria-label='Github'
             >

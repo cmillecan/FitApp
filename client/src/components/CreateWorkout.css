@@ -13,13 +13,13 @@
 .workoutForm {
     background: #fff;
     max-width: 300px;
-    height: 400px;
     display: flex;
     box-shadow: 0 4px 20px rgb(220, 230, 239);
     -webkit-filter: drop-shadow(0 4px 20px rgb(231, 231, 231));
     filter: drop-shadow(0 4px 20px rgb(226, 226, 226));
     border-radius: 10px;
-    overflow: hidden;
+    overflow: visible;
+    height: auto;
     justify-content: center;
     align-content: center;
 }
@@ -93,7 +93,7 @@
 }
 
 .submit-btn {
-    background: rgb(255, 129, 32);
+    background: rgb(0, 161, 189);
     border: 0;
     width: 70px;
     padding: 5px;
@@ -101,6 +101,7 @@
     color: #fff;
     text-align: center;
     cursor: pointer;
+    margin-bottom: 10px;
 }
 
 .submit-btn:hover {
