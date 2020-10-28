@@ -1,5 +1,4 @@
 .demo-container {
-  height: 70vh;
   padding: 4rem;
   background: #fffbf5;
   flex-direction: column;
@@ -10,12 +9,14 @@
 .cards-content {
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
   text-align: center;
   margin-top: 100px;
 }
 
 .card {
+  min-width: 450px;
   margin: 5px 10px;
   display: flex;
   flex-direction: column;
@@ -25,8 +26,8 @@
 }
 
 .card-header {
-  background-image: url("../sign-in.png");
-  height: 250px;
+  background: #fff;
+  height: 320px;
   text-align: center;
   font-size: 12px;
   font-weight: 600;
@@ -53,10 +54,7 @@ h1 {
   color: rgb(0, 161, 189);
 }
 
-@media only screen and (max-width: 728px) {
-  .cards-content {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
+.demo-pic {
+  width: 350px;
+  overflow: hidden;
 }

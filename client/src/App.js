@@ -14,29 +14,42 @@ function App() {
 
   useEffect(() => {
     client
-        .getUser()
-        .then((res) => res.json())
-        .then((data) => {
-          data && setUser(data);
-        })
-        .catch((e) => {
-          console.error("getUser failed: ", e);
-        });
+      .getUser()
+      .then((res) => res.json())
+      .then((data) => {
+        data && setUser(data);
+      })
+      .catch((e) => {
+        console.error("getUser failed: ", e);
+      });
   }, []);
 
-  const userId = user ? user.id : '';
+  const userId = user ? user.id : "";
 
   return (
-        <Router>
-          <Navbar user={user} />
-          <Switch>
-            <Route path="/" exact component={Home} />
-            <Route path="/plan" render={(props) => <Plan {...props} userId={userId} />} />
-            <Route path="/history" render={(props) => <History {...props} userId={userId} />} />
-            <Route path="/account" render={(props) => <Account {...props} user={user} setUser={setUser} />} />
-          </Switch>
-            <Footer />
-        </Router>
+    <Router>
+      <Navbar user={user} />
+      <div className="page-content">
+        <Switch>
+          <Route path="/" exact component={Home} />
+          <Route
+            path="/plan"
+            render={(props) => <Plan {...props} userId={userId} />}
+          />
+          <Route
+            path="/history"
+            render={(props) => <History {...props} userId={userId} />}
+          />
+          <Route
+            path="/account"
+            render={(props) => (
+              <Account {...props} user={user} setUser={setUser} />
+            )}
+          />
+        </Switch>
+      </div>
+      <Footer />
+    </Router>
   );
 }
 

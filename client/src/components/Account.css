@@ -93,6 +93,11 @@
     opacity: 0.5;
 }
 
+.warning {
+    font-size: 10px;
+    margin-top: 5px;
+}
+
 .account-btns {
     margin-top: 32px;
 }

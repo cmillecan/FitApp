@@ -1,32 +1,37 @@
 .about-container {
-    height: 60vh;
     padding: 4rem;
     background: #ffffff;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 50px auto;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 .about-content {
+    width: 800px;
     display: flex;
     flex-direction: row;
     justify-content: center;
+    align-items: center;
     text-align: center;
-    margin-top: 100px;
+    margin-top: 50px;
 }
 
 .left {
     margin: 5px 10px;
     display: flex;
-    flex: 1;
+    flex: 3;
     flex-direction: column;
-    border-radius: 4px;
+    align-items: center;
 }
 
 .right {
+    margin-left: -100px;
     display: flex;
     flex: 4;
-    height: 250px;
+    height: 150px;
     text-align: center;
     font-size: 12px;
     font-weight: 600;
@@ -35,9 +40,9 @@
 }
 
 .name {
-    margin-top: 10px;
+    max-width: 150px;
+    margin-top: 5px;
     padding: 5px;
-    border: 1px solid rgb(255, 157, 38);
 }
 
 h1 {
@@ -47,12 +52,11 @@ h1 {
 
 .about-pic {
     border-radius: 100%;
+    max-width: 100px;
+    -moz-box-shadow: 1px 6px 7px #ccc;
+    -webkit-box-shadow: 1px 6px 7px #ccc;
+    box-shadow: 1px 6px 7px #ccc;
+    -moz-border-radius:100%;
+    -webkit-border-radius:100%;
 }
 
-@media only screen and (max-width: 728px) {
-    .about-content {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
-}

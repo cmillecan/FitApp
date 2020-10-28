@@ -1,6 +1,7 @@
 .workoutCard {
   background: #fff;
   max-width: 250px;
+  min-width: 250px;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -80,8 +81,9 @@
 
 .delete-div {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 130px;
+  position: absolute;
+  bottom: 10px;
+  left: 105px;
+  margin: 0 auto;
 }
 

@@ -1,16 +1,10 @@
 .history-container {
     background: #fff;
-    height: 80vh;
+    max-width: 1000px;
+    margin: 50px auto;
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-}
-
-@media only screen and (max-width: 900px) {
-    .history-container {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-    }
 }
