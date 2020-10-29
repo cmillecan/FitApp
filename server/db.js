@@ -24,7 +24,7 @@ const setupDB = async ({ host, database, user, password }) => {
         {}
     );
 
-    // workouts schema
+    // workouts schemed
     const Workout = sequelize.define(
         "workout",
         {

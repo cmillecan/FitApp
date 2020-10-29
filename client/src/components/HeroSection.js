@@ -6,12 +6,11 @@ import WorkoutCard from "./WorkoutCard";
 
 function HeroSection({ user }) {
   const exercises = [
-    { exercise: "warm-up", schema: "bike", weight: 10, unit: "min" },
-    { exercise: "squats", schema: "3 x 10", weight: "135", unit: "lbs" },
-    { exercise: "DB lunges", schema: "3 x 10", weight: "25", unit: "lbs" },
-    { exercise: "SLD", schema: "3 x 10", weight: "60", unit: "lbs" },
-    { exercise: "leg extns", schema: "3 x 10" },
-    { exercise: "hamstring curls", schema: "3 x 10" },
+    { exercise: "swing", schema: "", weight: "40", unit: "sec" },
+    { exercise: "press combo", schema: "", weight: "40", unit: "sec" },
+    { exercise: "plank pass", schema: "", weight: "40", unit: "sec" },
+    { exercise: "dead/squat", schema: "", weight: "40", unit: "sec" },
+    { exercise: "lunge/press", schema: "", weight: "40", unit: "sec" },
   ];
 
   const heroButton = user ? (
@@ -55,9 +54,9 @@ function HeroSection({ user }) {
           isDemo
           content={{
             date: "Today",
-            category: "Legs",
+            category: "KETTLEBELL HIIT",
             exercises,
-            notes: "Notes:",
+            notes: "Repeat 3x. Rest 20 seconds between each exercise",
           }}
         />
       </div>
