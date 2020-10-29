@@ -10,33 +10,34 @@
 }
 
 .about-content {
-    width: 800px;
+    width: 700px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    margin-top: 50px;
+    margin-top: 30px;
+    box-shadow: 0 4px 20px rgb(220, 230, 239);
+    -webkit-filter: drop-shadow(0 4px 20px rgb(231, 231, 231));
+    filter: drop-shadow(0 4px 20px rgb(226, 226, 226));
+    border-radius: 10px;
+    background: #fffbf5;
+    padding-bottom: 15px;
 }
 
 .left {
-    margin: 5px 10px;
+    margin-top: 30px;
     display: flex;
-    flex: 3;
     flex-direction: column;
     align-items: center;
 }
 
 .right {
-    margin-left: -100px;
     display: flex;
-    flex: 4;
     height: 150px;
-    text-align: center;
+    text-align: left;
     font-size: 12px;
-    font-weight: 600;
-    background-color: rgb(252, 228, 201);
-    padding: 5px 10px;
+    padding: 10px 20px;
 }
 
 .name {

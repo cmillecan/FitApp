@@ -15,11 +15,25 @@ function HeroSection({ user }) {
   ];
 
   const heroButton = user ? (
-    <div>PLAN WORKOUT</div>
+    <a href="/plan" className="btn-mobile">
+      <Button
+        className="btns"
+        buttonStyle="btn--outline"
+        buttonSize="btn--large"
+      >
+        PLAN WORKOUT
+      </Button>
+    </a>
   ) : (
-    <Button className="btns" buttonStyle="btn--outline" buttonSize="btn--large">
-      GET STARTED
-    </Button>
+    <a href="/api/auth/google" className="btn-mobile">
+      <Button
+        className="btns"
+        buttonStyle="btn--outline"
+        buttonSize="btn--large"
+      >
+        GET STARTED
+      </Button>
+    </a>
   );
 
   return (

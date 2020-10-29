@@ -1,34 +1,30 @@
-import React from 'react';
-import './Button.css';
+import React from "react";
+import "./Button.css";
 
-const STYLES = ['btn--primary', 'btn--outline'];
+const STYLES = ["btn--primary", "btn--outline"];
 
-const SIZES = ['btn--medium', 'btn--large'];
+const SIZES = ["btn--medium", "btn--large"];
 
 export const Button = ({
   children,
   type,
   onClick,
   buttonStyle,
-  buttonSize
+  buttonSize,
 }) => {
   const checkButtonStyle = STYLES.includes(buttonStyle)
     ? buttonStyle
     : STYLES[0];
 
-    const checkButtonSize = SIZES.includes(buttonSize)
-    ? buttonStyle
-    : SIZES[0];
+  const checkButtonSize = SIZES.includes(buttonSize) ? buttonStyle : SIZES[0];
 
-    return (
-      <a href='/api/auth/google' className='btn-mobile'>
-        <button
+  return (
+      <button
         className={`btn ${checkButtonStyle} ${checkButtonSize}`}
         onClick={onClick}
         type={type}
-        >
-          {children}
-        </button>
-      </a>
-    )
+      >
+        {children}
+      </button>
+  );
 };

@@ -31,7 +31,11 @@ function App() {
       <Navbar user={user} />
       <div className="page-content">
         <Switch>
-          <Route path="/" exact component={Home} />
+          <Route
+            path="/"
+            exact
+            render={(props) => <Home {...props} user={user} />}
+          />
           <Route
             path="/plan"
             render={(props) => <Plan {...props} userId={userId} />}

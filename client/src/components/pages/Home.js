@@ -4,10 +4,10 @@ import Cards from '../Demo';
 import HeroSection from '../HeroSection';
 import About from "../About";
 
-function Home() {
+function Home({user}) {
   return (
     <>
-      <HeroSection />
+      <HeroSection user={user}/>
       <Cards />
       <About />
     </>
