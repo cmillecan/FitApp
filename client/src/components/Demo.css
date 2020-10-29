@@ -13,10 +13,11 @@
   justify-content: center;
   text-align: center;
   margin-top: 100px;
+  margin-bottom: 30px;
 }
 
 .card {
-  min-width: 450px;
+  min-width: 250px;
   margin: 5px 10px;
   display: flex;
   flex-direction: column;
@@ -27,7 +28,7 @@
 
 .card-header {
   background: #fff;
-  height: 320px;
+  height: 300px;
   text-align: center;
   font-size: 12px;
   font-weight: 600;
@@ -36,7 +37,7 @@
 }
 
 .card-main {
-  min-width: 450px;
+  min-width: 250px;
   background: rgb(175, 224, 231);
   height: 50px;
   color: rgb(0, 161, 189);
@@ -56,6 +57,18 @@ h1 {
 }
 
 .demo-pic {
-  width: 350px;
+  width: 300px;
+  margin-top: 15px;
+  overflow: hidden;
+}
+
+.demo-pic1 {
+  width: 300px;
+  margin-top: 20px;
+  overflow: hidden;
+}
+
+.demo-pic2 {
+  width: 300px;
   overflow: hidden;
 }
