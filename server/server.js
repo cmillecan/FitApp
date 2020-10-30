@@ -10,11 +10,11 @@ const path = require("path");
 
 const main = async () => {
   const app = express();
-  const port = 3000;
+  const port = 80;
 
   const dbConfig = {
     database: secret.DB,
-    host: secret.HOST,
+    host: "localhost",
     password: secret.PASSWORD,
     user: secret.USER,
   };
@@ -241,7 +241,7 @@ const main = async () => {
   });
 
   // set port, listen for requests
-  const PORT = process.env.PORT || 3000;
+  const PORT = process.env.PORT || 80;
   const server = app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`);
   });
