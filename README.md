@@ -1,10 +1,10 @@
 # [FitApp](http://constance.ninja)
-####Plan your workouts online
+##### Plan your workouts online
 
 ## Introduction 
 FitApp is a web application for creating customized workouts and tracking progress. I created FitApp because fitness has been an important part of my life. I wanted to create a simple and easy way to log workouts that would replace the tools I had used in the past such as notebooks, Google Sheets and Microsoft Word. FitApp is my final portfolio project of the foundations year at Holberton School. 
 
-![](media/img.png "FitApp")
+![FitApp](media/img.png "FitApp")
 
 #### Technologies
 Client | Server | Database
