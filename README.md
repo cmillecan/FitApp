@@ -1,18 +1,25 @@
 # [FitApp](http://constance.ninja)
 Plan your workouts online
 
-![FitApp](media/home.png "FitApp")
+## Table of Contents
+* [Introduction](#intro)
+    * [Technologies](#tech)
+* [Installation](#install)
+* [Usage](#usage)
+* [Contribution](#author)
+* [Related Projects](#related)
+* [Licensing](#license)
 
-## Introduction 
+## <a name="intro"></a>Introduction
 FitApp is a web application for creating customized workouts and tracking progress. I created FitApp because fitness has been an important part of my life. I wanted to create a simple and easy way to log workouts that would replace the tools I had used in the past such as notebooks, Google Sheets and Microsoft Word. FitApp is my final portfolio project of the foundations year at Holberton School. 
-
-#### Technologies
+![FitApp](media/home.png "FitApp")
+#### <a name="tech"></a>Technologies
 Client | Server | Database
 ------ | ------- | --------
 |React | Express | MySQL
 | CSS   | Sequelize | |
 
-## Installation
+## <a name="install"></a>Installation
 
 Clone this repository:
 
@@ -51,10 +58,7 @@ From the `root` directory:
 
 ```npm run start```
 
-
-
-
-## Usage
+## <a name="usage"></a>Usage
 1. Sign-in with Google
 ![](media/img1.png "Sign-in")
 
@@ -67,11 +71,11 @@ From the `root` directory:
 4. Sign-out or delete your account
 ![](media/img4.png "Sign-out")
 
-## Contribution 
+## <a name="author"></a>Contribution 
 [Constance Millecan](http://github.com/cmillecan)
 
-## Related projects
+## <a name="related"></a>Related projects
 * [Simple Workout Log](https://www.simpleworkoutlog.com/)
 * [FitNotes](https://www.fitnotesapp.com/)
 
-## Licensing
+## <a name="license"></a>Licensing
