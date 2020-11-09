@@ -1,4 +1,4 @@
-# [FitApp](http://constance.ninja)
+# FitApp
 Plan your workouts online
 
 ### Table of Contents
