@@ -12,7 +12,7 @@ Plan your workouts online
 
 ## <a name="intro"></a>Introduction
 FitApp is a web application for creating customized workouts and tracking progress. I created FitApp because fitness has been an important part of my life. I wanted to create a simple and easy way to log workouts that would replace the tools I had used in the past such as notebooks, Google Sheets and Microsoft Word. FitApp is my final portfolio project of the foundations year at Holberton School. 
-[![FitApp](media/home.png "FitApp")](http://www.youtube.com/watch?v=XAMVzS13HY0 "FitApp")
+[![FitApp](media/home.png "FitApp")](https://youtu.be/LxdsR191p_c "FitApp")
 ## <a name="tech"></a>Technologies
 Client | Server | Database
 ------ | ------- | --------
