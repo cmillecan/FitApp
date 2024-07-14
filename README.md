@@ -70,12 +70,3 @@ From the `root` directory:
 
 4. Sign-out or delete your account
 ![](media/img4.png "Sign-out")
-
-## <a name="author"></a>Contribution 
-[Constance Millecan](http://github.com/cmillecan)
-
-## <a name="related"></a>Related projects
-* [Simple Workout Log](https://www.simpleworkoutlog.com/)
-* [FitNotes](https://www.fitnotesapp.com/)
-
-## <a name="license"></a>Licensing
